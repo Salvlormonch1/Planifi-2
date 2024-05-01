@@ -74,15 +74,23 @@ export default {
 </script>
 
 <template>
-  <div class="register-management">
+  <div class="register">
     <user-item-register
       :statuses="statuses"
-      :item="user"/>
+      :item="user"
+      @saved="onSavedEventHandler"/>
   </div>
 </template>
 
 <style>
-  .register-management {
-    width: auto;
+  .register {
+    background-color: #A2D5F2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
   }
 </style>

@@ -1,0 +1,25 @@
+ <template #content>
+        <div class="register-content">
+          <div class="register-input-text">
+            <label for="user_name">Name</label>
+            <pv-input-text id="register-user_name-input" style="padding: 12px; font-size: 20px" v-model="item.name" :class="{'p-invalid': submitted && !item.name}"/>
+          </div>
+          <div class="register-input-text">
+            <label for="e-mail">E-mail</label>
+            <pv-input-text id="register-e-mail-input" style="padding: 12px; font-size: 20px" v-model="item.email" :class="{'p-invalid': submitted && !item.email}"/>
+          </div>
+          <div class="register-input-text">
+            <label for="business-name">Nombre de la empresa o emprendimiento</label>
+            <pv-input-text id="register-business-name-input" style="padding: 12px; font-size: 20px" v-model="item.business_name" :class="{'p-invalid': submitted && !item.business_name}"/>
+          </div>
+          <div class="register-password">
+            <label for="password">Password</label>
+            <div class="register-password-container">
+              <input :type="showPassword ? 'text' : 'password'" id="register-password-input" v-model="item.password" :style="passwordBarStyle" :class="{'p-invalid': submitted && !item.password}"/>
+              <button class="toggle-password-button" @click="togglePassword">
+                <i :class="showPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </template>

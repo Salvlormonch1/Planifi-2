@@ -1,10 +1,21 @@
 <script>
 
-const defaultStyle = { width: '450px'};
-
 export default {
   name: "create",
   props: { entity: null, entityName: '', edit: Boolean, size: 'default' },
+  data() {
+    return {
+      cardStyle: {
+        width: 'auto',
+        height: 'auto',
+        border: 'gray 1px wave',
+        borderRadius: '10px',
+        backgroundColor: 'white',
+        padding: '24px 96px',
+        fontSize: '24px'
+      }
+    }
+  },
   methods: {
     onRegister() {
       this.$emit('registered', this.entity);
@@ -15,51 +26,26 @@ export default {
 </script>
 
 <template>
-  <div class="register">
-    <div class="register-card">
-      <pv-card v-bind:model="true" class="register-content-card">
-        <template #header>
-          <h1 style="text-align: center; padding-bottom: 10px">Sign Up</h1>
-        </template>
-        <slot name="content"></slot>
-        <template #footer>
-          <div class="register-buttons">
-            <div><pv-button label="Login" class="login-button" @click="onRegister"></pv-button></div>
-            <div><pv-button class="google-button">
-              <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign In with Google
-            </pv-button></div>
-          </div>
-        </template>
-      </pv-card>
-    </div>
-  </div>
+  <pv-card v-bind:model="true" class="register-content-card">
+    <template #header>
+      <h1 style="text-align: center; padding-bottom: 10px">Sign Up</h1>
+    </template>
+    <slot name="content"></slot>
+    <template #footer>
+      <div class="register-buttons">
+        <div><pv-button label="Login" class="login-button" @click="onRegister"></pv-button></div>
+        <div><pv-button class="google-button">
+          <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign In with Google
+        </pv-button></div>
+      </div>
+    </template>
+  </pv-card>
 </template>
 
 <style>
-.register {
-  background-color: #A2D5F2;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.register-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 60px;
-  height: auto;
-  width: auto;
-}
-
 .register-content-card {
   width: 500px;
   height: auto;
-  overflow: hidden;
   border: gray 1px wave;
   border-radius: 10px;
   background-color: white;
