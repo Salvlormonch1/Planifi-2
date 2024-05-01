@@ -6,7 +6,9 @@ export default {
     return {
       drawer: false,
       items: [
-        { label: 'Check Account', to: '/check-account'}
+        { label: 'Check Account', to: '/check-account'},
+        { label: 'Login', to: '/login' },
+        { label: 'Register', to: '/register'}
       ]
     }
   },

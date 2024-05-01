@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "register.component"
+  name: "register"
 }
 </script>
 
