@@ -10,7 +10,7 @@ export class UsersApiService {
         return http.get(`/users/${id}`);
     }
 
-    createUser(user) {
+    create(user) {
         return http.post('/users', user);
     }
 

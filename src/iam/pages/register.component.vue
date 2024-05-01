@@ -72,7 +72,7 @@ export default {
     <user-item-register
       :statuses="statuses"
       :item="user"
-      v-on:saved="onSavedEventHandler"/>
+      v-on:registered="onSavedEventHandler"/>
   </div>
 </template>
 
