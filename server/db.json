@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ramon",
+      "email": "ramonjorge@gmail.com",
+      "business_name": "Planifi",
+      "password": "12345"
+    }
+  ]
+}
