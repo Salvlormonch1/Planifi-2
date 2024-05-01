@@ -57,7 +57,7 @@ export default {
             <router-link to="/forgot-password" style="color: #81D440" >Forgot Password?</router-link>
             <div>
               <span>Don't have an account? </span>
-              <router-link to="/sign-up" style="color: #81D440">Sign Up</router-link>
+              <router-link to="/register" style="color: #81D440">Sign Up</router-link>
             </div>
           </div>
         </template>
