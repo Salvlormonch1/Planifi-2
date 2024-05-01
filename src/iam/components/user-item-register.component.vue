@@ -1,5 +1,6 @@
 <script>
 import Create from "../../shared/components/create.component.vue";
+import http from "../../shared/services/http-common.js";
 
 export default {
   name: "user-item-register",
@@ -44,8 +45,14 @@ export default {
     registeredEventHandler() {
       console.log(this.item);
       this.submitted = true;
-      if (this.item.name) {
-        this.$emit('saved', this.item);
+      if (this.item.name && this.item.email && this.item.business_name && this.item.password) {
+        http.post('/users', this.item)
+            .then(response => {
+              console.log(response);
+            })
+            .catch(error => {
+              console.error(error);
+            })
       }
     }
   }

@@ -39,15 +39,9 @@ export default {
       this.submitted = false;
     },
 
-    onSavedEventHandler(item) {
+    onSavedEventHandler() {
       this.submitted = true;
-      if (this.user.name.trim()) {
-        if (item.id) {
-          this.updateUser();
-        } else {
-          this.createUser();
-        }
-      }
+      this.createUser();
     },
 
     createUser() {
@@ -78,7 +72,7 @@ export default {
     <user-item-register
       :statuses="statuses"
       :item="user"
-      @saved="onSavedEventHandler"/>
+      v-on:saved="onSavedEventHandler"/>
   </div>
 </template>
 
