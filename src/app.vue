@@ -5,7 +5,9 @@ export default {
   data() {
     return {
       drawer: false,
-      items: []
+      items: [
+        { label: 'Check Account', to: '/check-account'}
+      ]
     }
   },
   methods: {
