@@ -8,6 +8,10 @@ import DialogService from "primevue/dialogservice";
 import ToastService from "primevue/toastservice";
 import {PrimeIcons} from "primevue/api";
 import 'primeicons/primeicons.css'
+import Button from "primevue/button";
+import Card from "primevue/card";
+import InputText from "primevue/inputtext";
+import Password from "primevue/password";
 
 createApp(App)
     .use(router)
@@ -16,4 +20,8 @@ createApp(App)
     .use(DialogService)
     .use(ToastService)
     .use(PrimeIcons)
+    .component('pv-button', Button)
+    .component('pv-card', Card)
+    .component('pv-input-text', InputText)
+    .component('pv-password', Password)
     .mount('#app')
