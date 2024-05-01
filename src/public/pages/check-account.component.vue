@@ -19,11 +19,11 @@ export default {
       <div class="text">
         <div>
           <span>If you are new </span>
-          <router-link to="/login" class="button">click here</router-link>
+          <router-link to="/register" class="button">click here</router-link>
         </div>
         <div>
           <span>If you have an account </span>
-          <router-link to="/register" class="button">click here</router-link>
+          <router-link to="/login" class="button">click here</router-link>
         </div>
       </div>
     </div>
