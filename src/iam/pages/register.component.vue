@@ -1,12 +1,11 @@
 <script>
 import {User} from "../model/user.entity.js";
 import {UsersApiService} from "../services/users-api.service.js";
-import UserItemRegisterComponent from "../components/user-item-register.component.vue";
 import UserItemRegister from "../components/user-item-register.component.vue";
 
 export default {
   name: "register",
-  components: {UserItemRegister, UserItemRegisterComponent},
+  components: {UserItemRegister},
   data() {
     return {
       title: { singular: 'User', plural: 'Users' },
@@ -15,7 +14,6 @@ export default {
       selectedUsers: [],
       statuses: [{label: 'Registered', value: 'registered'}, {label: 'Unregistered', value: 'unregistered'}],
       userService: null,
-      createDialogIsVisible: true,
       submitted: false
     }
   },
@@ -39,7 +37,6 @@ export default {
     onNewItemEventHandler() {
       this.user = {};
       this.submitted = false;
-      this.createDialogIsVisible = true;
     },
 
     onSavedEventHandler(item) {
@@ -51,7 +48,6 @@ export default {
           this.createUser();
         }
       }
-      this.createDialogIsVisible = true;
     },
 
     createUser() {
@@ -81,9 +77,7 @@ export default {
   <div class="register-management">
     <user-item-register
       :statuses="statuses"
-      :item="user"
-      :visible="createDialogIsVisible"
-      v-on:saved="onSavedEventHandler($event)"/>
+      :item="user"/>
   </div>
 </template>
 

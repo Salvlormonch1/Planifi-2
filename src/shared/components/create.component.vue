@@ -4,10 +4,11 @@ const defaultStyle = { width: '450px'};
 
 export default {
   name: "create",
-  props: { entity: null, visible: Boolean, entityName: '', edit: Boolean, size: 'default' },
+  props: { entity: null, entityName: '', edit: Boolean, size: 'default' },
   methods: {
     onRegister() {
       this.$emit('registered', this.entity);
+      this.$emit('saved', this.entity);
     }
   }
 }
@@ -16,14 +17,14 @@ export default {
 <template>
   <div class="register">
     <div class="register-card">
-      <pv-card v-bind:visible="visible" :model="true" class="register-content-card">
+      <pv-card v-bind:model="true" class="register-content-card">
         <template #header>
           <h1 style="text-align: center; padding-bottom: 10px">Sign Up</h1>
         </template>
         <slot name="content"></slot>
         <template #footer>
           <div class="register-buttons">
-            <div><pv-button :label="Login" :class="login-button" @click="onRegister"></pv-button></div>
+            <div><pv-button label="Login" class="login-button" @click="onRegister"></pv-button></div>
             <div><pv-button class="google-button">
               <img src="/src/assets/icon-google.png" alt="Google" class="google-icon"> Sign In with Google
             </pv-button></div>

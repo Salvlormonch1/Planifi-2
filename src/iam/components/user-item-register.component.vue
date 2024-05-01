@@ -17,7 +17,6 @@ export default {
   components: {Create},
   props: {
     item: null,
-    visible: Boolean,
     statuses: Array
   },
   methods: {
@@ -41,8 +40,9 @@ export default {
     registeredEventHandler() {
       console.log(this.item);
       this.submitted = true;
-      if (this.item.title) {
+      if (this.item.name.trim()) {
         this.$emit('registered', this.item);
+        this.$emit('saved', this.item);
       }
     }
   }
@@ -50,9 +50,9 @@ export default {
 </script>
 
 <template>
-  <div class="user-item">
-    <create :entity="item" :visible="visible" entityName="User" @saved="registeredEventHandler">
-      <template #content>
+  <create :entity="item" entityName="User" @saved="registeredEventHandler">
+    <template #content>
+      <div class="user-item">
         <div class="register-content">
           <div class="register-input-text">
             <label for="user_name">Name</label>
@@ -76,9 +76,9 @@ export default {
             </div>
           </div>
         </div>
-      </template>
-    </create>
-  </div>
+      </div>
+    </template>
+  </create>
 </template>
 
 <style>
